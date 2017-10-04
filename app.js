@@ -289,7 +289,7 @@ function fileClaim(owner, claim, callback) {
                     if (policy.title === claim.benefit) {
                         policyFound = true;
 
-                        claim.outcome = 'DENIED';
+                        claim.outcome = 'NEGADA';
                         claim.payment = 0;
 
                         var possibleEligibility = claim.amount * policy.percentCovered / 100;
@@ -304,23 +304,23 @@ function fileClaim(owner, claim, callback) {
                         console.log('Available: ' + amountAvailable);
 
                         if (amountAvailable <= 0) {
-                            claim.outcome = 'NONE';
+                            claim.outcome = 'NENHUMA';
                             claim.payment = 0;
-                            message = "Sorry, you reached your claim limit. So none of the amount could be covered by your insurance.";
+                            message = "Desculpe, você atingiu o limite de reembolso. Nenhuma parte do valor foi coberta por seu seguro.";
                         }
 
                         if (policy.amountClaimed > amountAvailable && amountAvailable > 0) {
-                            claim.outcome = 'PARTIAL';
+                            claim.outcome = 'PARCIAL';
                             claim.payment = amountAvailable;
                             policy.amountClaimed = policy.Limit;
-                            message = "You have reached max coverage. Remaining $" + amountAvailable + " of policy limit applied.";
+                            message = "Você atingiu a cobertura máxima. O restante de R$ " + amountAvailable + " do limite foi aplicado.";
                         }
 
                         if (possibleEligibility < amountAvailable) {
-                            claim.outcome = 'FULL';
+                            claim.outcome = 'COMPLETA';
                             claim.payment = possibleEligibility;
                             policy.amountClaimed = policy.amountClaimed + possibleEligibility;
-                            message = "$" + possibleEligibility + " was covered by your insurance!";
+                            message = "O valor de R$ " + possibleEligibility + " foi coberto por seu seguro!";
                         }
 
                         policy.claims.push(claim);
