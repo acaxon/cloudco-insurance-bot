@@ -129,8 +129,8 @@ function makeHistoryRow(claim) {
         '<div class="claimdata">' + claim.provider + '</div>' +
         '<div class="centereddata">' + date + '</div>' +
         '<div class="centereddata">' + claim.outcome + '</div>' +
-        '<div class="financeclaimdata">R$' + claim.amount + '</div>' +
-        '<div class="financeclaimdata">R$' + claim.payment + '</div>';
+        '<div class="financeclaimdata">R$ ' + claim.amount + '</div>' +
+        '<div class="financeclaimdata">R$ ' + claim.payment + '</div>';
 
     return row;
 }
@@ -289,7 +289,7 @@ function getBenefits() {
                 policyKeys.push(policy.type);
                 var benefitTitle = document.createElement('div');
                 benefitTitle.className = "benefitTypeTitle";
-                benefitTitle.innerHTML = policy.type + " Benefits";
+                benefitTitle.innerHTML = policy.type;
                 var benefitEntity = createBenefitEntity(policy.type);
                 benefitset.appendChild(benefitTitle);
                 benefitset.appendChild(benefitEntity);
@@ -321,7 +321,8 @@ function getBenefits() {
 
         var datepicker = document.getElementById('claimdate');
 
-        var today = moment().format('YYYY-MM-DD');
+        // var today = moment().format('YYYY-MM-DD');
+        var today = moment().format('DD/MM/YYYY');
         datepicker.value = today;
 
         // Load Ana's first message after the user info
@@ -395,7 +396,7 @@ function submitClaim(source) {
 
             }
         } else {
-            alert('Request failed.  Returned status of ' + xhr.status);
+            alert('Pedido falhou. Erro: ' + xhr.status);
         }
     };
 
