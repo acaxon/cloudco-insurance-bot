@@ -43,8 +43,28 @@
                 <div style="margin:40px;">
                     <div class="benefitkit">
                         <div class="claimhistory">
-                            <div id="header" class="header">Histórico de Reembolsos</div>
+                            <div id="header" class="header">
+                              <img width="20px" src="images/HealthHeart.svg ">
+                              Saúde
+                            </div>
                             <div id="owner" class="owner"></div>
+                            <div class="healthTabArea">
+                              <div  class = "healthTab" onClick="selectBenefitsTab()">
+                                <span id="benefitsTabMenu" class = "tabLink">
+                                  BENEFÍCIOS
+                                </span>
+                              </div>
+                              <div  class = "healthTab" onClick="selectClaimTab()">
+                                <span id="claimTabMenu" class = "tabLink">
+                                  PEDIR REEMBOLSO
+                                </span>
+                              </div>
+                              <div  accesskey="" class = "healthTab" onClick="location.href='./claims'">
+                                <span id="historyTabMenu" class = "tabLink selected">
+                                  HISTÓRICO DE REEMBOLSOS
+                                </span>
+                              </div>
+                            </div>
                             <div class="claimheader">
                                 <div class="marker">
                                     <!--                                    <div class="bullet"></div>-->
@@ -53,8 +73,8 @@
                                 <div class="category">PRESTADOR</div>
                                 <div class="centereddata">DATA</div>
                                 <div class="centereddata">RESULTADO</div>
-                                <div class="financeclaimdata">VALOR PEDIDO</div>
-                                <div class="financeclaimdata">VALOR ACEITO</div>
+                                <div class="financeclaimdata">PEDIDO (R$)</div>
+                                <div class="financeclaimdata">ACEITO (R$)</div>
                             </div>
                             <div class="claimlist" id="claimlist">
                             </div>
