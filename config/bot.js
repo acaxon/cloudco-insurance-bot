@@ -333,7 +333,7 @@ function buildContextObject(req, callback) {
                 message = message.toFixed(2);
                 message = message.toString();
             } else {
-                reprompt.message = "You didn't enter a valid amount. Please enter the amount paid for the procedure.";
+                reprompt.message = "Você não digitou um valor válido. Por favor digite o valor pago pelo procedimento.";
                 return callback(null, reprompt);
             }
         } else if (context.claim_step === "date") {
@@ -351,7 +351,7 @@ function buildContextObject(req, callback) {
 
             // If the date is NaN reprompt for correct format
             if (isNaN(userDate)) {
-                reprompt.message = "That doesn't look like a date. Please try again.";
+                reprompt.message = "Isso não me parece uma data. Por favor, tente novamente.";
                 return callback(null, reprompt);
             } else if (userDate) {
                 userDate.setHours(cDate.getHours());
@@ -361,7 +361,7 @@ function buildContextObject(req, callback) {
                 console.log("Date:", userDate);
                 // If user tries to claim a date in the future
                 if (userDate.getTime() > cDate.getTime()) {
-                    reprompt.message = "Sorry, Marty McFly, you can't make a claim in the future. Please try the date again.";
+                    reprompt.message = "Desculpe mas não posso permitir um reembolso futuro. Por favor, tente outra data.";
                     return callback(null, reprompt);
                 } else { // Otherwise format the date to YYYY-MM-DD - Ana will also verify
                     var month = '' + (userDate.getUTCMonth() + 1),
@@ -378,7 +378,7 @@ function buildContextObject(req, callback) {
                     message = [year, month, day].join('-');
                 }
             } else {
-                reprompt.message = "That doesn't look like a valid date. Please try again.";
+                reprompt.message = "Isso não me parece uma data válida. Por favor, tente novamente.";
                 return callback(null, reprompt);
             }
         }
@@ -516,11 +516,11 @@ function updateContextObject(response, userPolicy, callback) {
         detail = context.chosen_detail;
         procedure_details = context.procedure_details;
 
-        text = "Your " + detail + " for " + procedure + " is " + procedure_details[detail];
+        text = "Seu " + detail + " para " + procedure + " é " + procedure_details[detail];
 
         // Also display the amount already claimed when showing coverage detail
         if (detail === "coverage") {
-            text = text + " and you have claimed " + procedure_details.claimed + " of " + procedure_details.limit;
+            text = text + " e você pediu " + procedure_details.claimed + " de " + procedure_details.limit;
         }
 
         // Null out the chosen variables in context to reset the conversation options

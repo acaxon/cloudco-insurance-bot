@@ -7,12 +7,10 @@
         
         .header {
             text-align: justify;
-            color: #12aaeb;
+            color: #2E425B;
             margin: 10px;
-            font-size: 14px;
+            font-size: 20px;
             font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
         
         .owner {

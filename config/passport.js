@@ -81,59 +81,59 @@ function initCloudant() {
 function createPolicies(account) {
 
     var eyeWear = {};
-    eyeWear.type = 'vision';
+    eyeWear.type = 'visão';
     eyeWear.icon = 'eyewear';
-    eyeWear.title = 'eye wear';
-    eyeWear.description = 'Glasses, contact lens, laser treatment, etc';
+    eyeWear.title = 'óculos/lentes';
+    eyeWear.description = 'Óculos, lentes de contato, tratamento a laser, etc';
     eyeWear.claimLimit = 300;
     eyeWear.percentCovered = 80;
     eyeWear.amountClaimed = 0;
-    eyeWear.scope = 'bi-annual';
+    eyeWear.scope = 'semestral';
     eyeWear.startDate = new Date(2016, 1, 1);
     eyeWear.endDate = new Date(2017, 12, 31);
     eyeWear.code = 100;
     eyeWear.claims = [];
 
     var eyeExam = {};
-    eyeExam.type = 'vision';
+    eyeExam.type = 'visão';
     eyeExam.icon = 'eyeexam';
-    eyeExam.title = 'eye exam';
-    eyeExam.description = 'Eye examinations';
+    eyeExam.title = 'exame oftalmológico';
+    eyeExam.description = 'Qualquer exame oftalmológico';
     eyeExam.claimLimit = 100;
     eyeExam.percentCovered = 100;
     eyeExam.amountClaimed = 0;
     eyeExam.entitlements = 1;
-    eyeExam.scope = 'bi-annual';
+    eyeExam.scope = 'semestral';
     eyeExam.startDate = new Date(2016, 1, 1);
     eyeExam.endDate = new Date(2017, 12, 31);
     eyeExam.code = 200;
     eyeExam.claims = [];
 
     var teethCleaning = {};
-    teethCleaning.type = 'dental';
+    teethCleaning.type = 'odontológico';
     teethCleaning.icon = 'toothbrush';
-    teethCleaning.title = 'teeth cleaning';
-    teethCleaning.description = 'Teeth Cleaning';
+    teethCleaning.title = 'limpeza dentária';
+    teethCleaning.description = 'Limpeza Dentária';
     teethCleaning.claimLimit = 500;
     teethCleaning.percentCovered = 75;
     teethCleaning.amountClaimed = 0;
     teethCleaning.entitlements = 2;
-    teethCleaning.scope = 'annual';
+    teethCleaning.scope = 'anual';
     teethCleaning.startDate = new Date(2016, 1, 1);
     teethCleaning.endDate = new Date(2016, 12, 31);
     teethCleaning.code = 300;
     teethCleaning.claims = [];
 
     var orthodontics = {};
-    orthodontics.type = 'dental';
+    orthodontics.type = 'odontológico';
     orthodontics.icon = 'braces';
-    orthodontics.title = 'orthodontics';
-    orthodontics.description = 'Orthodontics';
+    orthodontics.title = 'ortodontia';
+    orthodontics.description = 'Ortodontia';
     orthodontics.claimLimit = 2000;
     orthodontics.percentCovered = 80;
     orthodontics.amountClaimed = 0;
     orthodontics.entitlements = 100;
-    orthodontics.scope = 'lifetime';
+    orthodontics.scope = 'vitalício';
     orthodontics.startDate = new Date(2016, 1, 1);
     orthodontics.endDate = new Date(2036, 1, 1);
     orthodontics.code = 400;
@@ -142,13 +142,13 @@ function createPolicies(account) {
     var teethRepair = {};
     teethRepair.type = 'dental';
     teethRepair.icon = 'tooth';
-    teethRepair.title = 'tooth repair';
-    teethRepair.description = 'Teeth repair - fillings, chipped teeth';
+    teethRepair.title = 'reparo dentário';
+    teethRepair.description = 'Reparos dentários - restaurações, reconstruções';
     teethRepair.claimLimit = 2000;
     teethRepair.percentCovered = 80;
     teethRepair.amountClaimed = 0;
     teethRepair.entitlements = 100;
-    teethRepair.scope = 'annual';
+    teethRepair.scope = 'anual';
     teethRepair.startDate = new Date(2016, 1, 1);
     teethRepair.endDate = new Date(2016, 12, 31);
     teethRepair.code = 500;
@@ -157,43 +157,43 @@ function createPolicies(account) {
     var mentalHealth = {};
     mentalHealth.type = 'mental';
     mentalHealth.icon = 'talk';
-    mentalHealth.title = 'psychologist';
-    mentalHealth.description = 'Psychologist';
+    mentalHealth.title = 'psicólogo';
+    mentalHealth.description = 'Psicólogo';
     mentalHealth.claimLimit = 1400;
     mentalHealth.percentCovered = 70;
     mentalHealth.amountClaimed = 0;
     mentalHealth.entitlements = 100;
-    mentalHealth.scope = 'annual';
+    mentalHealth.scope = 'anual';
     mentalHealth.startDate = new Date(2016, 1, 1);
     mentalHealth.endDate = new Date(2016, 12, 31);
     mentalHealth.code = 600;
     mentalHealth.claims = [];
 
     var physio = {};
-    physio.type = 'physical';
+    physio.type = 'física';
     physio.icon = 'body';
-    physio.title = 'physiotherapy';
-    physio.description = 'Physiotherapy';
+    physio.title = 'fisioterapia';
+    physio.description = 'Fisioterapia';
     physio.claimLimit = 800;
     physio.percentCovered = 60;
     physio.amountClaimed = 0;
     physio.entitlements = 100;
-    physio.scope = 'annual';
+    physio.scope = 'anual';
     physio.startDate = new Date(2016, 1, 1);
     physio.endDate = new Date(2016, 12, 31);
     physio.code = 800;
     physio.claims = [];
 
     var chiropractor = {};
-    chiropractor.type = 'physical';
-    chiropractor.icon = 'spine';
-    chiropractor.title = 'chiropractor';
-    chiropractor.description = 'Chiropractic Services';
+    chiropractor.type = 'física';
+    chiropractor.icon = 'coluna';
+    chiropractor.title = 'quiroprático';
+    chiropractor.description = 'Serviços de quiroprática';
     chiropractor.claimLimit = 400;
     chiropractor.percentCovered = 50;
     chiropractor.amountClaimed = 0;
     chiropractor.entitlements = 100;
-    chiropractor.scope = 'annual';
+    chiropractor.scope = 'anual';
     chiropractor.startDate = new Date(2016, 1, 1);
     chiropractor.endDate = new Date(2016, 12, 31);
     chiropractor.code = 700;
@@ -273,7 +273,7 @@ module.exports = function(passport) {
                 }
                 if (result.docs.length === 0) {
                     console.log("Username was not found");
-                    return done(null, false, "Username or password incorrect.");
+                    return done(null, false, "Usuário e/ou senha inválido(s).");
                 }
 
                 // user was found, now determine if password matches
@@ -283,7 +283,7 @@ module.exports = function(passport) {
                     return done(null, user, null);
                 } else {
                     console.log("Password is not correct");
-                    return done(null, null, "Username or password incorrect.");
+                    return done(null, null, "Usuário e/ou senha inválido(s).");
                 }
             });
         }
@@ -316,7 +316,7 @@ module.exports = function(passport) {
                     return done(null, null, err);
                 } else if (result.docs.length > 0) {
                     console.log("Username was found");
-                    return done(null, null, "User already exists. User another username address.");
+                    return done(null, null, "Usuário já existente. Utilize outro endereço.");
                 }
 
                 // create the new user
