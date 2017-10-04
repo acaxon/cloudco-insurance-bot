@@ -208,7 +208,7 @@ function createBenefitDetail(policy) {
         '</div>' +
         '<div class="benefitfact">' +
         '<div class="factlabel">limite</div>' +
-        '<div class="factcheck">$' + policy.claimLimit + '</div>' +
+        '<div class="factcheck">R$ ' + policy.claimLimit + '</div>' +
         '</div>' +
         '<div class="benefitfact">' +
         '<div class="factlabel">cobertura</div>' +

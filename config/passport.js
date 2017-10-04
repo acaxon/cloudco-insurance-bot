@@ -186,7 +186,7 @@ function createPolicies(account) {
 
     var chiropractor = {};
     chiropractor.type = 'física';
-    chiropractor.icon = 'coluna';
+    chiropractor.icon = 'spine';
     chiropractor.title = 'quiroprático';
     chiropractor.description = 'Serviços de quiroprática';
     chiropractor.claimLimit = 400;
