@@ -37,9 +37,9 @@
 }
 
 .owner {
-    text-align: right;
     color: #225282;
     font-size: 12px;
+    margin-top: 5px;
 }
 
 .header {

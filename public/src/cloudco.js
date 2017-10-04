@@ -117,7 +117,8 @@ function get(path, callback) {
 
 function makeHistoryRow(claim) {
 
-    var date = moment(claim.date).format('YYYY-MM-DD');
+    // var date = moment(claim.date).format('YYYY-MM-DD');
+    var date = moment(claim.date).format('DD/MM/YYYY');
 
     var row = document.createElement('div');
     row.className = 'claimrow';
@@ -128,8 +129,8 @@ function makeHistoryRow(claim) {
         '<div class="claimdata">' + claim.provider + '</div>' +
         '<div class="centereddata">' + date + '</div>' +
         '<div class="centereddata">' + claim.outcome + '</div>' +
-        '<div class="financeclaimdata">$' + claim.amount + '</div>' +
-        '<div class="financeclaimdata">$' + claim.payment + '</div>';
+        '<div class="financeclaimdata">R$' + claim.amount + '</div>' +
+        '<div class="financeclaimdata">R$' + claim.payment + '</div>';
 
     return row;
 }
@@ -161,8 +162,8 @@ function createBenefitRow(policy) {
         '</div>' +
         '</div>' +
         '<div class="benefitTitle">' + policy.title + '</div>' +
-        '<div id="' + policy.title + '-ToggleTextOpen" class="benefitMenu">View Benefit<i style = "padding-left:10px" class="fa fa-angle-down" aria-hidden="true"></i></div>' +
-        '<div id="' + policy.title + '-ToggleTextClose" class="benefitMenu" style = "display:none">Close Benefit<i style = "padding-left:10px" class="fa fa-angle-up" aria-hidden="true"></i></div>';
+        '<div id="' + policy.title + '-ToggleTextOpen" class="benefitMenu">Expandir<i style = "padding-left:10px" class="fa fa-angle-down" aria-hidden="true"></i></div>' +
+        '<div id="' + policy.title + '-ToggleTextClose" class="benefitMenu" style = "display:none">Fechar<i style = "padding-left:10px" class="fa fa-angle-up" aria-hidden="true"></i></div>';
     row.onclick = function() {
         toggleDetails(policy.title);
     }
@@ -202,31 +203,31 @@ function createBenefitDetail(policy) {
     detail.innerHTML =
         '<div class="benefitfacts">' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">benefit</div>' +
+        '<div class="factlabel">benefício</div>' +
         '<div class="factcheck">' + policy.description + '</div>' +
         '</div>' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">limit</div>' +
+        '<div class="factlabel">limite</div>' +
         '<div class="factcheck">$' + policy.claimLimit + '</div>' +
         '</div>' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">coverage</div>' +
+        '<div class="factlabel">cobertura</div>' +
         '<div class="factcheck">' + policy.percentCovered + '%</div>' +
         '</div>' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">term</div>' +
+        '<div class="factlabel">condições</div>' +
         '<div class="factcheck">' + policy.scope + '</div>' +
         '</div>' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">start</div>' +
-        '<div class="factcheck">Jan 1 2016</div>' +
+        '<div class="factlabel">início</div>' +
+        '<div class="factcheck">01/01/2016</div>' +
         '</div>' +
         '<div class="benefitfact">' +
         '<div class="factlabel">end</div>' +
-        '<div class="factcheck">Dec 31 2017</div>' +
+        '<div class="factcheck">31/12/2016</div>' +
         '</div>' +
         '<div class="benefitfact">' +
-        '<div class="factlabel">code</div>' +
+        '<div class="factlabel">código</div>' +
         '<div class="factcheck">' + policy.code + '</div>' +
         '</div>' +
         '</div>'
@@ -388,9 +389,9 @@ function submitClaim(source) {
             var reply = JSON.parse(xhr.responseText);
 
             if (reply.outcome === 'success') {
-                claimmessages.innerHTML = 'Your claim was filed.';
+                claimmessages.innerHTML = 'Seu pedido foi enviado.';
             } else {
-                claimmessages.innerHTML = 'Something went wrong - try again';
+                claimmessages.innerHTML = 'Ocorreu um problema - tente novamente.';
 
             }
         } else {
