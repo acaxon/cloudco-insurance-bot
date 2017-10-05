@@ -102,6 +102,11 @@
         height: 25px;
     }
 
+    .logo-separator {
+      border-left: 1px solid white;
+      margin-right: 10px;
+    }
+
     .watsonLogo {
       vertical-align:middle;
       padding:20px
